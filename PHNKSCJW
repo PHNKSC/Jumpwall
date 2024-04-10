@@ -1,0 +1,73 @@
+local PabloLib = loadstring(game:HttpGet("https://raw.githubusercontent.com/BatuKvi123/PabloLibV3/main/PabloLibV3"))()
+local window = PabloLib:Create(
+"PHNKMOD UI", -- Name here.
+"Enabled", -- If you want draggable set here to "Enabled" if you dont want set to "Disabled".
+"p" -- You can put any keybind here to open close.
+)
+local tab1 = window:CreateTab("SKIP")
+
+
+tab1:CreateButton("UP", function()
+local args = {
+    [1] = "up"
+}
+
+game:GetService("ReplicatedStorage"):WaitForChild("ChangeStageByTechy"):FireServer(unpack(args))
+end)
+
+tab1:CreateButton("DOWN", function()
+local args = {
+    [1] = "down"
+}
+
+game:GetService("ReplicatedStorage"):WaitForChild("ChangeStageByTechy"):FireServer(unpack(args))
+
+
+--down
+end)
+
+local tab2 = window:CreateTab("GET COIN")
+
+
+tab2:CreateButton("ADD UNLIMITED COIN ✨", function()
+
+local args = {
+    [1] = 2500000000000
+}
+
+game:GetService("ReplicatedStorage"):WaitForChild("RemoteEvents"):WaitForChild("GrantCoinEvent"):FireServer(unpack(args))
+
+
+end)
+
+
+local tab3 = window:CreateTab("ITEM")
+
+
+tab3:CreateButton("lasergun", function()
+
+local args = {
+    [1] = "HyperlaserGun"
+}
+
+game:GetService("ReplicatedStorage"):WaitForChild("RemoteEvents"):WaitForChild("giveGearEventBackpackandStarterGear"):FireServer(unpack(args))
+wait(0)
+
+local args = {
+    [1] = game:GetService("ReplicatedStorage"):WaitForChild("LuckyBlockGears"):WaitForChild("FireBall")
+}
+
+game:GetService("ReplicatedStorage"):WaitForChild("RemoteEvents"):WaitForChild("LuckyBlock"):FireServer(unpack(args))
+
+end)
+
+tab3:CreateButton("RANDOM", function()
+
+local args = {
+    [1] = game:GetService("ReplicatedStorage"):WaitForChild("LuckyBlockGears"):WaitForChild("Hyperbike")
+}
+
+game:GetService("ReplicatedStorage"):WaitForChild("RemoteEvents"):WaitForChild("LuckyBlock"):FireServer(unpack(args))
+
+
+end)
